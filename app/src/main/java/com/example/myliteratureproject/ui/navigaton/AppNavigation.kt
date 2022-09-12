@@ -1,11 +1,32 @@
 package com.example.myliteratureproject.ui.navigaton
 
-@composable
+import android.window.SplashScreen
+import androidx.compose.runtime.Composable
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.myliteratureproject.ui.screens.AboutUsScreen
+import com.example.myliteratureproject.ui.screens.MainScreen
+import com.example.myliteratureproject.ui.screens.MenuScreen
+import com.example.myliteratureproject.ui.screens.SplashScreen
+
+@Composable
 fun Appnavigation(){
-    val navControler = rememberNavControler()
-    NavHost(navControler = navControler, startDestination = AppScreens.FirstScreen.route){
-        composable(route = AppScreens.FirstScreen.route){FirstScreen()}
-        composable(route = AppScreens.SecondScreen.route){SecondScreen()}
-        composable(route = AppScreens.ThirdScreen.route){ThirdScreen()}
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = AppScreens.SplashScreen.route){
+        composable(AppScreens.SplashScreen.route){
+            SplashScreen(navController)
+        }
+        composable(AppScreens.AboutUsScreen.route){
+            AboutUsScreen(navController = navController)
+        }
+        composable(AppScreens.MainScreen.route){
+            MainScreen(navController = navController)
+        }
+        composable(AppScreens.MenuScreen.route){
+            MenuScreen(navController = navController)
+        }
     }
 }
