@@ -11,7 +11,7 @@ import com.example.myliteratureproject.ui.screens.MenuScreen
 import com.example.myliteratureproject.ui.screens.SplashScreen
 
 @Composable
-fun Appnavigation(){
+fun AppNavigation(){
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -25,8 +25,23 @@ fun Appnavigation(){
         composable(AppScreens.MainScreen.route){
             MainScreen(navController = navController)
         }
-        composable(AppScreens.MenuScreen.route){
-            MenuScreen(navController = navController)
+        composable(AppScreens.MathMenuScreen.route){
+            MathMenuScreen(navController = navController)
+        }
+        composable(AppScreens.ChemMenuScreen.route){
+            ChemMenuScreen(navController = navController)
+        }
+        composable(AppScreens.PhysicMenuScreen.route){
+            PhysicMenuScreen(navController = navController)
+        }
+        composable(AppScreens.MathFormulasScreen.route){
+            MathFormulasScreen(navController = navController)
+        }
+        composable(AppScreens.ChemFormulasScreen.route){
+            ChemFormulasScreen(navController = navController)
+        }
+        composable(AppScreens.PhysicFormulasScreen.route){
+            PhysicFormulasScreen(navController = navController)
         }
     }
 }
