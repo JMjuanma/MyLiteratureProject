@@ -8,11 +8,14 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Science
 import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -38,6 +41,9 @@ fun Splash(){
         modifier = Modifier.fillMaxSize()
     ){
         Text("SplashScreen")
+
+        Icon(imageVector = Icons.Default.Science, contentDescription = null)
+
         /*Image(
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
             contentDescription = "Background"
@@ -50,4 +56,19 @@ fun Splash(){
             //librería con mejores iconos: implementation "androidx.compose.material:material-icons-extended:$compose_version"
         )*/
     }
+}
+
+@Preview
+@Composable
+fun firstPreview(){
+    Column {
+        Icon(
+            imageVector = Icons.Default.Science,
+            contentDescription = null,
+            modifier = Modifier.size(350.dp),
+            tint = Color.Yellow
+        )
+
+    }
+
 }
