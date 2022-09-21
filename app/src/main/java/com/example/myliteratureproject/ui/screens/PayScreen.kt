@@ -11,6 +11,6 @@ import androidx.navigation.NavHostController
 @Composable
 fun PayScreen(navController: NavHostController) {
     Surface(modifier = Modifier.fillMaxSize()) {
-        Text("PayUS")
+        Text("PayUS Perro")
     }
 }

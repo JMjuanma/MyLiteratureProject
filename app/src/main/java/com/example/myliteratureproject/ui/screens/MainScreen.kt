@@ -1,9 +1,6 @@
 package com.example.myliteratureproject.ui.screens
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -49,9 +46,10 @@ fun MainScreen(navController: NavHostController){
             },
             drawerGesturesEnabled = true) {
             //Text("MenuScreen")
-            Column {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(text = "Menu Screen")
                 Text(text = "Esta Aplicacion pretende ser una ayuda a todos aquellos que buscan . . .")
+                Spacer(modifier = Modifier.height(30.dp))
                 OutlinedButton(onClick = {
                     navController.navigate(AppScreens.MenuScreen.route)
                 }) {
