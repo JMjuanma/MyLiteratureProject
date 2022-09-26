@@ -7,7 +7,9 @@ import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -21,15 +23,15 @@ import com.example.myliteratureproject.ui.navigaton.AppScreens
 import kotlinx.coroutines.launch
 
 @Composable
-fun MenuScreen(navController: NavHostController){
+fun MenuScreen(navController: NavHostController) {
     //Surface (
-        //modifier = Modifier.fillMaxSize()
-            //)
+    //modifier = Modifier.fillMaxSize()
+    //)
     //val darkTheme: Boolean = isSystemInDarkTheme()
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    Surface(color = MaterialTheme.colors.background){
-        Scaffold (
+    //Surface() {
+        Scaffold(
             scaffoldState = scaffoldState,
             topBar = {
                 TopAppBar(
@@ -44,7 +46,7 @@ fun MenuScreen(navController: NavHostController){
                             Icon(imageVector = Icons.Filled.Menu, contentDescription = "Open Menu")
                         }
                     },
-                    title = {Text(text = "hola")})
+                    title = { Text(text = "hola") })
             },
             drawerContent = {
                 Text(
@@ -53,20 +55,22 @@ fun MenuScreen(navController: NavHostController){
                 )
                 Divider()
             },
-            drawerGesturesEnabled = true) {
+            drawerGesturesEnabled = true
+
+        ) {
             //Text("MenuScreen")
             Column(
                 Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
-            ){
+            ) {
                 OutlinedButton(onClick = { navController.navigate(AppScreens.MainMathScreen.route) }) {
                     Text(text = "Mate")
                 }
                 OutlinedButton(onClick = { navController.navigate(AppScreens.MainPhysicsScreen.route) }) {
                     Text(text = "Física")
                 }
-                OutlinedButton(onClick = { navController.navigate(AppScreens.MainChemscreen.route) }) {
+                OutlinedButton(onClick = { navController.navigate(AppScreens.MainChemScreen.route) }) {
                     Text(text = "Quimica")
                 }
                 OutlinedButton(onClick = { navController.navigate(AppScreens.PayScreen.route) }) {
@@ -79,10 +83,10 @@ fun MenuScreen(navController: NavHostController){
                 Text(text = "VIDAAA")
             }*/
 
-            }
+        }
 
     }
-}
+//}
 
 /*@Composable
 fun tile(icon: ImageVector, topic: String) {

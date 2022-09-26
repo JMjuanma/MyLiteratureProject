@@ -27,7 +27,7 @@ fun Appnavigation(){
         composable(AppScreens.MenuScreen.route){
             MenuScreen(navController = navController)
         }
-        composable(AppScreens.MainChemscreen.route){
+        composable(AppScreens.MainChemScreen.route){
             MainChemScreen(navController = navController)
         }
         composable(AppScreens.MainMathScreen.route){

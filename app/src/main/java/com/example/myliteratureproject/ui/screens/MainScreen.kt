@@ -3,6 +3,7 @@ package com.example.myliteratureproject.ui.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -44,17 +45,23 @@ fun MainScreen(navController: NavHostController){
                 )
                 Divider()
             },
-            drawerGesturesEnabled = true) {
+            drawerGesturesEnabled = true,
+            floatingActionButton = {
+                ExtendedFloatingActionButton(
+                    text = { Text(text = "Comencemos") },
+                    onClick = {
+                        navController.navigate(AppScreens.MenuScreen.route)
+                    }
+                )
+            },
+            floatingActionButtonPosition = FabPosition.Center
+            ) {
             //Text("MenuScreen")
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = "Menu Screen")
+                Text(text = "Main Screen")
                 Text(text = "Esta Aplicacion pretende ser una ayuda a todos aquellos que buscan . . .")
                 Spacer(modifier = Modifier.height(30.dp))
-                OutlinedButton(onClick = {
-                    navController.navigate(AppScreens.MenuScreen.route)
-                }) {
-                    Text(text = "Comencemos")
-                }
+
             }
         }
 
