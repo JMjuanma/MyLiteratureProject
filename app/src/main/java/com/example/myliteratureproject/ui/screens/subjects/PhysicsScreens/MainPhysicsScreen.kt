@@ -1,5 +1,6 @@
 package com.example.myliteratureproject.ui.screens.subjects.PhysicsScreens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,6 +17,7 @@ import androidx.navigation.NavHostController
 import com.example.myliteratureproject.ui.navigaton.AppScreens
 import kotlinx.coroutines.launch
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainPhysicsScreen(navController: NavHostController){
     val scaffoldState = rememberScaffoldState()
