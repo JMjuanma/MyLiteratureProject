@@ -36,7 +36,7 @@ fun MainPhysicsScreen(navController: NavHostController){
                             Icon(imageVector = Icons.Filled.Menu, contentDescription = "Open Menu")
                         }
                     },
-                    title = {Text(text = "Química")})
+                    title = {Text(text = "Física")})
             },
             drawerContent = {
                 Text(
@@ -52,7 +52,7 @@ fun MainPhysicsScreen(navController: NavHostController){
                 verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-
+                //PhysicResumeScreen
             }
             /*if (darkTheme) {
                 Text(text = "MUERTEEEEE")

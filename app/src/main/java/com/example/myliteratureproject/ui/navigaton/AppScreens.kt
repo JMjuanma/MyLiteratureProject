@@ -8,5 +8,6 @@ sealed class AppScreens(val route: String){
     object MainChemScreen: AppScreens("main_chem_screen")
     object MainMathScreen: AppScreens("main_math_screen")
     object MainPhysicsScreen: AppScreens("main_physics_screen")
+    object PhysicResumeScreen: AppScreens("physic_resume_screen")
 
 }

@@ -1,3 +1,114 @@
 <resources>
     <string name="app_name">MyLiteratureProject</string>
+
+    <string name="physic_topic_1">Cinemática</string>
+    <string name="physic_topic_2">Ondas y Óptica</string>
+    <string name="physic_topic_3">Energía</string>
+
+    <string name="physic_subtopic_1">Conceptos Básicos</string>
+    <string name="physic_subtopic_2">Movimiento Lineal</string>
+    <string name="physic_subtopic_3">Lanzamiento de proyectiles</string>
+    <string name="physic_subtopic_4">Movimiento Circular Uniforme</string>
+
+    <string name="physic_subtopic_5">Movimiento Armónico Simple</string>
+    <string name="physic_subtopic_6">Ondas</string>
+    <string name="physic_subtopic_7">Sonido</string>
+    <string name="physic_subtopic_8">Luz</string>
+    <string name="physic_subtopic_9">Lentes</string>
+
+    <string name="physic_subtopic_10">Cantidad de Movimiento Lineal</string>
+    <string name="physic_subtopic_11">Impulso</string>
+    <string name="physic_subtopic_12">Trabajo</string>
+    <string name="physic_subtopic_13">Potencia</string>
+    <string name="physic_subtopic_14">Energía</string>
+    <string name="physic_subtopic_15">Fuerzas Conservativas y Disipativas</string>
+    <string name="physic_subtopic_16">Energía Mecánica</string>
+    <string name="physic_subtopic_17">Leyes de Conservación</string>
+    <string name="physic_subtopic_18">Colisiones</string>
+
+    <string name="physic_paragraph_1">La física es el estudio de las leyes y propiedades del universo durante sus cambios, como tal tiene unidades fundamentales en las que basa sus teorías. La física se basa en experimentos y como tal tiene una unidad de medida internacional para cada propiedad, facilitando el entendimiento de los resltados de dichos experimentos al rededor del mundo. Dichas unidades a veces se quedaran muy pequeñas o grandes, por eso se manejan junto a prefijos.</string>
+
+    <string name="physic_paragraph_2">La posición de un objeto es el espacio que ocupa, debido a que el espacio essta en constante expanción y es uniforme, las posiciones se representan en función a otros objetos como la superficie de la tierra(coordenadas polares); la velocidad de un objeto es la rapidez en la que cambia de posición en una determinada dirección, suele representarse como la diferencia de posiciones entre la cantidad de tiempo que le tomo efectuar dicho cambio.</string>
+    <string name="physic_paragraph_3">La aceleración de un objeto es la variación de velocidad en un tiempo determinado.</string>
+
+    <string name="physic_paragraph_4">Cada proyectil tiene una velocidad inicial, y es afectado por la aceleración de la gravedad unicamente en las direcciones transversales a la misma.</string>
+
+    <string name="physic_paragraph_5">Se produce cuando un objeto desarrolla una aceleracion tangencial a su velocidad, por lo tanto obtendra un radio de giro y un centro, aparecerá un método alternativo de medida de posicion, velocidad y aceleración; donde se usara los porcentajes de arcos en lugar de las distancias físicas, y su nueva unidad será el radian; donde 2 pi representa una vuelta; dicha medida se obtendra al dividir la distancia viajada entre el radio de giro.</string>
+
+    <string name="physic_paragraph_6">El movimiento armónico simple es ejecutado por objetos que buscan volver a una posición de equilibrio con una fuerza directamente proporcional a la distancia con su punto de equilibrio. Por ejemplo un satélite que gira alrededor de la tierra, tiende a la misma, pero tiene su propia velocidad que va cambiando de dirección junto con el objeto.</string>
+    <string name="physic_paragraph_7">Las características de todo movimiento armónico simple son su amplitud(La máxima distancia que ha logrado estar de su centro de equilibrio), periodo(Tiempo que tarda en completar una oscilación), frecuencia(Fracción de la oscilación completada en un segundo)y frecuencia angular(Velocidad con la cual ejecuta la oscilación). La frecuencia se mide en Hertz, que equivalen a 1s . No todos los cuerpos inician con un ángulo nulo, por esto en las ecuaciones se tiene en cuenta un ángulo inicial, ángulo que está medido en radianes, una unidad que mide una distancia en base al arco que abarca, siendo una vuelta completa 2 pi</string>
+    <string name="physic_paragraph_8">Dado que en los resortes no hay un movimiento circular y por lo tanto ángulo, se puede calcular la velocidad angular con la masa y la constante elástica del resorte</string>
+    <string name="physic_paragraph_9">De manera similar, en los péndulos puede calcularse la velocidad angular con la longitud del hilo y la aceleración de la gravedad</string>
+
+    <string name="physic_paragraph_10">Las ondas son un fenómeno donde se transporta energía a través de la perturbación de un medio; normalmente imaginamos los intercambios de energía como choques entre diferentes masas, las ondas no requieren de una masa para efectuar el intercambio, pero sí pueden interactuar con los cuerpos y medios por los que pasan.</string>
+    <string name="physic_paragraph_11">Las ondas pueden dividirse según el medio en el que se expanden; en mecánicas, si se mueven solo por medios físicos, y electromagnéticas si no requieren de un medio para propagarse. También se puede clasificar las ondas según la cantidad de dimensiones por las cuales se propaga, pudiendo ser unidimensionales, bidimensionales o tridimensionales.</string>
+    <string name="physic_paragraph_12">La tercer manera de agrupar las ondas es en base a la diferencia de dirección entre la expansión de la onda y su oscilación; si ambas son paralelas entonces será una onda longitudinal, ondas mecánicas que se propagan por las colisiones de los medios que utilizan, si son transversales, las ondas también lo serán.</string>
+    <string name="physic_paragraph_13">Las onda está compuesta por crestas, las partes más altas  de la onda; valles, las partes más hundidas; amplitud, la distancia entre la posición de equilibrio y una cresta o un valle; longitud de onda, la distancia entre una cresta y un valle; frecuencia, periodo y número de onda(k), la distancia de la onda recorrida por cada ciclo.</string>
+
+    <string name="physic_paragraph_14">El sonido es una onda mecánica producida por vibraciones. El tono representa la magnitud de la frecuencia, siendo agudo si la frecuencia es alta y grave si es baja, se mide en Hertz(Hz), nuestro rango de audición sólo percibe entre 20 y 20000 Hz, fuera de esos rangos está el infrasonido y el ultrasonido. La duración, que mide el tiempo que se mantiene en emisión la onda sin atenuarse.</string>
+    <string name="physic_paragraph_15">La intensidad responde a la amplitud de la onda, se mide en decibeles(dB), cada 10 dB nuestro oído percibe que el sonido se ha duplicado. Otro elemento del sonido es el timbre, una variación que se genera en la onda debido al objeto que se usa para generar el sonido.</string>
+    <string name="physic_paragraph_16">El efecto Doppler es la variación en la onda resultante de un emisor en movimiento, la dirección a la cual va el objeto recibirá una onda con una longitud de onda corta y una frecuencia alta, mientras que la zona que deja atras recibira una onda con una amplitud grande y una frecuencia baja, esta variación se acrecenta a medida que la onda se aleja del objeto.</string>
+    <string name="physic_paragraph_17">En la ecuación, vs es la velocidad del sonido, Vf es la velocidad del emisor y V0  es la velocidad del receptor, la velocidad del emisor será positiva si se acerca al receptor y negativa si se aleja, mientras que se invertirá para el receptor.</string>
+
+    <!-- <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string>
+    <string name="physic_paragraph_"></string> -->
 </resources>

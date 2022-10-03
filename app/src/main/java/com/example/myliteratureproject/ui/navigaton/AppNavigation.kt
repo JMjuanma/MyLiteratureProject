@@ -7,7 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.myliteratureproject.ui.screens.*
 import com.example.myliteratureproject.ui.screens.subjects.ChemScreens.MainChemScreen
 import com.example.myliteratureproject.ui.screens.subjects.MathScreens.MainMathScreen
-import com.example.myliteratureproject.ui.screens.subjects.PhysicsScreens.MainPhysicsScreen
+import com.example.myliteratureproject.ui.screens.subjects.PhysicsScreens.*
 
 @Composable
 fun Appnavigation(){
@@ -35,6 +35,9 @@ fun Appnavigation(){
         }
         composable(AppScreens.MainPhysicsScreen.route){
             MainPhysicsScreen(navController = navController)
+        }
+        composable(AppScreens.PhysicResumeScreen.route){
+            PhysicResumeScreen(navController = navController)
         }
     }
 }
