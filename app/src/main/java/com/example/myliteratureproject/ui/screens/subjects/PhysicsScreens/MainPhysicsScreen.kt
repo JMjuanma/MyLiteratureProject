@@ -38,7 +38,7 @@ fun MainPhysicsScreen(navController: NavHostController){
                             Icon(imageVector = Icons.Filled.Menu, contentDescription = "Open Menu")
                         }
                     },
-                    title = {Text(text = "Química")})
+                    title = {Text(text = "Física")})
             },
             drawerContent = {
                 Text(

@@ -2,6 +2,9 @@ package com.example.myliteratureproject.ui.screens
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.Icon
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -9,6 +12,8 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -24,7 +29,6 @@ fun MainScreen(navController: NavHostController){
     var materiasExpanded by remember { mutableStateOf(false) }
     var equationsExpanded by remember { mutableStateOf(false)}
 
-    Surface(color = MaterialTheme.colors.background) {
         Scaffold (
             scaffoldState = scaffoldState,
             topBar = {
@@ -40,7 +44,7 @@ fun MainScreen(navController: NavHostController){
                             Icon(imageVector = Icons.Filled.Menu, contentDescription = "Open Menu")
                         }
                     },
-                    title = {Text(text = "Matagustinos")})
+                    title = {Text(text = "Matagustinos")},)
             },
             drawerContent = {
                 Text(
@@ -48,31 +52,113 @@ fun MainScreen(navController: NavHostController){
                     modifier = Modifier.padding(16.dp)
                 )
                 Divider()
+                TextButton(
+                    onClick = { navController.navigate(AppScreens.MainScreen.route) },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(imageVector = Icons.Default.Home, contentDescription = "Inicio")
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(text = "Inicio")
+                }
+                val menuSurfaceColor by animateColorAsState(
+                    if (materiasExpanded) MaterialTheme.colors.secondary else MaterialTheme.colors.surface
+                )
+                val equationsSurfaceColor by animateColorAsState(
+                    if (equationsExpanded) MaterialTheme.colors.primaryVariant else MaterialTheme.colors.surface
+                )
+
+                TextButton(
+                    onClick = { materiasExpanded = !materiasExpanded },
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    //Icon(imageVector = Icons.Default.Sos, contentDescription = "ayuda")
+                    Icon(imageVector = Icons.Default.MenuBook, contentDescription = "ayuda")
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(text = "Materias")
+                }
+
+                Surface(
+                    shape = MaterialTheme.shapes.medium,
+                    elevation = 1.dp,
+                    color = menuSurfaceColor,
+                    modifier = Modifier
+                        .animateContentSize()
+                        .fillMaxWidth()
+                        .padding(2.dp),
+
+                ) {
+                    if(materiasExpanded){
+                        Column (
+                            modifier = Modifier
+                                .padding(1.dp)
+                        ){
+                            TextButton(
+                                onClick = {
+                                    navController.navigate(AppScreens.MainMathScreen.route)
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Calculate,
+                                    contentDescription = "Mate",
+                                    tint = MaterialTheme.colors.primaryVariant
+                                )
+                                Spacer(modifier = Modifier.width(10.dp))
+                                Text(
+                                    text = "Mate",
+                                    color = MaterialTheme.colors.primaryVariant
+                                )
+                            }
+
+                            TextButton(onClick = {
+                                navController.navigate(AppScreens.MainPhysicsScreen.route)
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Icon(
+                                    imageVector = Icons.Default.Balance,
+                                    contentDescription = "Fisica",
+                                    tint = MaterialTheme.colors.secondary
+                                )
+                                Spacer(modifier = Modifier.width(10.dp))
+                                Text(
+                                    text = "Física",
+                                    color = MaterialTheme.colors.secondary
+                                )
+                            }
+
+                            TextButton(onClick = {
+                                navController.navigate(AppScreens.MainChemScreen.route)
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Icon(
+                                    imageVector = Icons.Default.Science,
+                                    contentDescription = "Quimica",
+                                    tint = MaterialTheme.colors.secondary
+                                )
+                                Spacer(modifier = Modifier.width(10.dp))
+                                Text(
+                                    text = "Química",
+                                    color = MaterialTheme.colors.secondary
+                                )
+                            }
+                        }
+                    }
+                }
                 
-                TextButton(onClick = {
-                    navController.navigate(AppScreens.MainMathScreen.route)
-                }, modifier = Modifier.fillMaxWidth()) {
-                    Icon(imageVector = Icons.Default.Calculate, contentDescription = "Mate")
+                TextButton(onClick = { equationsExpanded = !equationsExpanded }) {
+                    Icon(imageVector = Icons.Default.Verified, contentDescription = "Verificado")
                     Spacer(modifier = Modifier.width(10.dp))
-                    Text(text = "Mate")
+                    Text(text = "Ecuaciones")
                 }
 
-                TextButton(onClick = {
-                    navController.navigate(AppScreens.MainPhysicsScreen.route)
-                }, modifier = Modifier.fillMaxWidth()) {
-                    Icon(imageVector = Icons.Default.Balance, contentDescription = "Fisica")
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Text(text = "Física")
-                }
+                Surface(shape = MaterialTheme.shapes.medium,
+                    elevation = 1.dp,
+                    color = menuSurfaceColor,
+                    modifier = Modifier
+                        .animateContentSize()
+                        .fillMaxWidth()
+                        .padding(1.dp), ) {
 
-                TextButton(onClick = {
-                    navController.navigate(AppScreens.MainChemScreen.route)
-                }, modifier = Modifier.fillMaxWidth()) {
-                    Icon(imageVector = Icons.Default.Science, contentDescription = "Quimica")
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Text(text = "Química")
                 }
-
+                
                 TextButton(onClick = {
                     navController.navigate(AppScreens.PayScreen.route)
                 }, modifier = Modifier.fillMaxWidth()) {
@@ -100,5 +186,5 @@ fun MainScreen(navController: NavHostController){
             }
         }
 
-    }
+
 }
