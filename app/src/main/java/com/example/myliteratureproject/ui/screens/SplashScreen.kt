@@ -71,7 +71,7 @@ fun Splash(){
     }
 }
 
-@Preview
+/*@Preview
 @Composable
 fun firstPreview(){
     Column {
@@ -84,4 +84,4 @@ fun firstPreview(){
 
     }
 
-}
+}*/
