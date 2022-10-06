@@ -1,18 +1,23 @@
 package com.example.myliteratureproject.ui.screens.subjects.ChemScreens
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
+import androidx.compose.material.R
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.material.icons.filled.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.myliteratureproject.ui.navigaton.AppScreens
 import kotlinx.coroutines.launch
@@ -22,48 +27,295 @@ import kotlinx.coroutines.launch
 fun MainChemScreen(navController: NavHostController){
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    Surface(color = MaterialTheme.colors.background){
-        Scaffold (
-            scaffoldState = scaffoldState,
-            topBar = {
-                TopAppBar(
-                    navigationIcon = {
-                        IconButton(onClick = {
-                            scope.launch {
-                                scaffoldState.drawerState.apply {
-                                    if (isClosed) open() else close()
+    var materiasExpanded by remember { mutableStateOf(false) }
+    var equationsExpanded by remember { mutableStateOf(false)}
+
+    val menuSurfaceColor by animateColorAsState(
+        if (materiasExpanded) MaterialTheme.colors.secondaryVariant else MaterialTheme.colors.secondary
+    )
+    val equationsSurfaceColor by animateColorAsState(
+        if (equationsExpanded) MaterialTheme.colors.secondaryVariant else MaterialTheme.colors.secondary
+    )
+
+    val materiasTextColor by animateColorAsState(
+        if (materiasExpanded) MaterialTheme.colors.secondary else MaterialTheme.colors.primaryVariant
+    )
+
+    val equationsTextColor by animateColorAsState(
+        if (equationsExpanded) MaterialTheme.colors.secondary else MaterialTheme.colors.primaryVariant
+    )
+
+    Scaffold (
+        scaffoldState = scaffoldState,
+        topBar = {
+            TopAppBar(
+                navigationIcon = {
+                    IconButton(onClick = {
+                        scope.launch {
+                            scaffoldState.drawerState.apply {
+                                if (isClosed) open() else close()
+                            }
+                        }
+                    }) {
+                        Icon(imageVector = Icons.Filled.Menu, contentDescription = "Open Menu")
+                    }
+                },
+                title = {Text(text = "Matagustinos")},)
+        },
+        drawerContent = {
+            Surface(color = MaterialTheme.colors.background, modifier = Modifier
+                .fillMaxWidth()
+                .height(350.dp),
+                elevation = 3.dp) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Image(
+                        painter = painterResource(id = com.example.myliteratureproject.R.drawable.logo),
+                        contentDescription = "logo",
+                    )
+                    Text(
+                        text = "MATAGUSTINOS",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 30.sp
+                    )
+                }
+            }
+            Surface(color = MaterialTheme.colors.secondary, modifier = Modifier.fillMaxSize()) {
+                Column {
+
+                    TextButton(
+                        onClick = { navController.navigate(AppScreens.MainScreen.route) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(6.dp)
+                    ) {
+                        Icon(imageVector = Icons.Default.Home, contentDescription = "Inicio", tint = MaterialTheme.colors.primaryVariant)
+                        Spacer(modifier = Modifier.width(10.dp))
+                        Text(text = "Inicio", color = MaterialTheme.colors.primaryVariant)
+                    }
+
+
+                    Surface(
+                        shape = MaterialTheme.shapes.medium,
+                        elevation = 0.dp,
+                        color = menuSurfaceColor,
+                        modifier = Modifier
+                            .animateContentSize()
+                            .fillMaxWidth()
+                            .padding(0.dp),
+
+                        ) {
+                        Column {
+                            TextButton(
+                                onClick = { materiasExpanded = !materiasExpanded },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(6.dp),
+                            ) {
+                                //Icon(imageVector = Icons.Default.Sos, contentDescription = "ayuda")
+                                Icon(imageVector = Icons.Default.MenuBook, contentDescription = "ayuda", tint = materiasTextColor)
+                                Spacer(modifier = Modifier.width(10.dp))
+                                Text(text = "Materias", color = materiasTextColor)
+                            }
+
+                            if(materiasExpanded){
+                                TextButton(
+                                    onClick = {
+                                        //navController.navigate(AppScreens.MainMathScreen.route)
+                                        scope.launch {
+                                            scaffoldState.drawerState.apply{close()}
+                                            scaffoldState.snackbarHostState.showSnackbar("Ésta sección está en desarrollo")
+                                        }
+                                    },
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(6.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Calculate,
+                                        contentDescription = "Mate",
+                                        tint = MaterialTheme.colors.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Text(
+                                        text = "Mate",
+                                        color = MaterialTheme.colors.primary
+                                    )
+                                }
+
+                                TextButton(onClick = {
+                                    navController.navigate(AppScreens.MainPhysicsScreen.route)
+                                }, modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(6.dp)) {
+                                    Icon(
+                                        imageVector = Icons.Default.Balance,
+                                        contentDescription = "Fisica",
+                                        tint = MaterialTheme.colors.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Text(
+                                        text = "Física",
+                                        color = MaterialTheme.colors.primary
+                                    )
+                                }
+
+                                TextButton(onClick = {
+                                    //navController.navigate(AppScreens.MainChemScreen.route)
+                                    scope.launch {
+                                        scaffoldState.drawerState.apply{close()}
+                                        scaffoldState.snackbarHostState.showSnackbar("Ésta sección está en desarrollo")
+                                    }
+                                }, modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(6.dp)) {
+                                    Icon(
+                                        imageVector = Icons.Default.Science,
+                                        contentDescription = "Quimica",
+                                        tint = MaterialTheme.colors.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Text(
+                                        text = "Química",
+                                        color = MaterialTheme.colors.primary
+                                    )
                                 }
                             }
-                        }) {
-                            Icon(imageVector = Icons.Filled.Menu, contentDescription = "Open Menu")
                         }
-                    },
-                    title = { Text(text = "Quimica") })
-            },
-            drawerContent = {
-                Text(
-                    text = "Lateral panel",
-                    modifier = Modifier.padding(16.dp)
-                )
-                Divider()
-            },
-            drawerGesturesEnabled = true) {
-            //Text("MenuScreen")
-            Column(
-                Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterVertically),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                Text(text = "Main Chem Screen")
-            }
 
-            /*if (darkTheme) {
-                Text(text = "MUERTEEEEE")
-            } else {
-                Text(text = "VIDAAA")
-            }*/
+                    }
+
+                    Surface(
+                        shape = MaterialTheme.shapes.medium,
+                        elevation = 0.dp,
+                        color = equationsSurfaceColor,
+                        modifier = Modifier
+                            .animateContentSize()
+                            .fillMaxWidth()
+                            .padding(0.dp), ) {
+
+                        Column {
+                            TextButton(
+                                onClick = { equationsExpanded = !equationsExpanded },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(6.dp)
+                            ) {
+                                Icon(imageVector = Icons.Default.Verified, contentDescription = "Verificado", tint = equationsTextColor)
+                                Spacer(modifier = Modifier.width(10.dp))
+                                Text(text = "Ecuaciones", color = equationsTextColor)
+                            }
+
+                            if (equationsExpanded)
+                            {
+                                TextButton(
+                                    onClick = {
+                                        //navController.navigate(AppScreens.MainMathScreen.route)
+                                        scope.launch {
+                                            scaffoldState.drawerState.apply{close()}
+                                            scaffoldState.snackbarHostState.showSnackbar("Ésta sección está en desarrollo")
+                                        }
+                                    },
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(6.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Calculate,
+                                        contentDescription = "Mate",
+                                        tint = MaterialTheme.colors.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Text(
+                                        text = "Mate",
+                                        color = MaterialTheme.colors.primary
+                                    )
+                                }
+
+                                TextButton(onClick = {
+                                    //navController.navigate(AppScreens.MainPhysicsScreen.route)
+                                    scope.launch {
+                                        scaffoldState.drawerState.apply{close()}
+                                        scaffoldState.snackbarHostState.showSnackbar("Ésta sección está en desarrollo")
+                                    }
+                                }, modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(6.dp)) {
+                                    Icon(
+                                        imageVector = Icons.Default.Balance,
+                                        contentDescription = "Fisica",
+                                        tint = MaterialTheme.colors.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Text(
+                                        text = "Física",
+                                        color = MaterialTheme.colors.primary
+                                    )
+                                }
+
+                                TextButton(onClick = {
+                                    //navController.navigate(AppScreens.MainChemScreen.route)
+                                    scope.launch {
+                                        scaffoldState.drawerState.apply{close()}
+                                        scaffoldState.snackbarHostState.showSnackbar("Ésta sección está en desarrollo")
+                                    }
+                                }, modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(6.dp)) {
+                                    Icon(
+                                        imageVector = Icons.Default.Science,
+                                        contentDescription = "Quimica",
+                                        tint = MaterialTheme.colors.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Text(
+                                        text = "Química",
+                                        color = MaterialTheme.colors.primary
+                                    )
+                                }
+                            }
+                        }
+
+                    }
+
+                    TextButton(onClick = {
+                        navController.navigate(AppScreens.PayScreen.route)
+                    }, modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(6.dp)) {
+                        Icon(imageVector = Icons.Default.Paid, contentDescription = "Paga", tint = MaterialTheme.colors.primaryVariant)
+                        Spacer(modifier = Modifier.width(10.dp))
+                        Text(text = "Contribuye", color = MaterialTheme.colors.primaryVariant)
+                    }
+                }
+            }
+        },
+        drawerGesturesEnabled = true,
+        floatingActionButton = {
+            ExtendedFloatingActionButton(
+                text = { Text(text = "Comencemos") },
+                onClick = {
+                    navController.navigate(AppScreens.MenuScreen.route)
+                }
+            )
+        },
+        floatingActionButtonPosition = FabPosition.Center
+    ) {
+        //Text("MenuScreen")
+        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth())
+        {
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(
+                text = "Contenido en desarrollo. Aporta si quieres tenerlo lo antes posible",
+                fontSize = 20.sp,
+                modifier = Modifier.padding(5.dp)
+            )
+            Spacer(modifier = Modifier.height(15.dp))
+
+
 
         }
-
     }
 }
