@@ -50,28 +50,39 @@
     <string name="physic_paragraph_16">El efecto Doppler es la variación en la onda resultante de un emisor en movimiento, la dirección a la cual va el objeto recibirá una onda con una longitud de onda corta y una frecuencia alta, mientras que la zona que deja atras recibira una onda con una amplitud grande y una frecuencia baja, esta variación se acrecenta a medida que la onda se aleja del objeto.</string>
     <string name="physic_paragraph_17">En la ecuación, vs es la velocidad del sonido, Vf es la velocidad del emisor y V0  es la velocidad del receptor, la velocidad del emisor será positiva si se acerca al receptor y negativa si se aleja, mientras que se invertirá para el receptor.</string>
 
+    <string name="physic_paragraph_18">La luz es una onda electromagnética, un importante grupo de ondas con la capacidad de transportarse usando los campos eléctricos y magnéticos. La óptica busca entender su movimiento, para esto usa fuentes y testigos de diferentes formas y propiedades. Los testigos pueden ser transparentes, translúcidos u opacos dependiendo de cuánta luz dejen pasar; toda zona de un objeto que no reciba luz tendrá sombra, aquella que la reciba parcialmente se considerará penumbra; dado que la óptica considera a la luz como una partícula, todos sus cálculos se basarán en movimientos lineales y por lo tanto su trayectoria es susceptible al uso de ecuaciones como la razones y proporciones.</string>
+    <string name="physic_paragraph_19">Entre los fenómenos que estudia la óptica está la reflexión, el cambio de dirección de la luz debido a colisiones, dada una superficie y el ángulo de incidencia del rayo de luz se puede calcular el ángulo de reflexión; una de las herramientas usadas para este cálculo es la normal, una línea imaginaria perpendicular a la superficie; el ángulo de incidencia se mide con respecto a la normal al igual que el de reflexión, ambos ángulos poseen la misma magnitud. Dicha reflexión trae un nuevo concepto a la mesa, las imágenes virtuales, imágenes creadas en superficies reflectivas.</string>
+    <string name="physic_paragraph_20">Si bien calcular las reflexiones en espejos planos, cuando hablamos de espejos esféricos el método cambia ligeramente; ahora se tiene en cuenta elementos como el centro de curvatura(centro del círculo por el cual pasa el espejo), el vértice(punto de referencia en el espejo), el foco(la mediana entre el vértice y el centro), el eje(línea recta imaginaria que conecta el centro y el vértice), el radio y la distancia focal(distancia entre el vértice y el foco).</string>
+    <string name="physic_paragraph_21">Con estos elementos se puede hacer distinción de 3 casos de reflexión en los espejos cóncavos. Si el rayo de luz pasa por el centro entonces su reflexión también lo hará, si pasa por el foco, su reflexión será paralela al eje, si es paralela al eje, su reflexión pasará por el foco. Si el rayo de luz no cumple ninguno de estos 3 casos siempre se puede utilizar extensiones de la superficie del espejo y cambiar la dirección del eje para que se pueda aplicar alguna ley.</string>
+    <string name="physic_paragraph_22">En el caso de los espejos convexos, los casos son parecidos, la dirección de los rayos reflejados se mantiene, pero el sentido se invierte, como se ve en la siguiente imagen. En el estudio del reflejo de los objetos se utilizan los 3 casos sobre un punto considerado importante para determinar el tamaño y posición de su imagen imaginaria.</string>
+    <string name="physic_paragraph_23">Similar a la reflexión, la luz pasa por otro fenómeno al cambiar de medio, la refracción; el ángulo de refracción se seguirá midiendo con respecto a la normal; pero será diferente del ángulo de incidencia; este cambio será proporcional a la relación entre los índices de refracción de ambos medios. Dicha diferencia no afecta exclusivamente al ángulo, sino que modifica la velocidad y longitud de onda de la luz; solo se mantendrá intacta la frecuencia y la amplitud. El índice de refracción es una comparación entre la velocidad de la luz en el vacío y la velocidad de la luz en un medio.</string>
+    <string name="physic_paragraph_24">La refracción no es obligatoria, para que se produzca se requieren ciertas condiciones, como la opacidad del objeto y el ángulo de incidencia; durante el traspaso de un rayo de luz de un medio a otro existe un ángulo límite de incidencia, si el ángulo es mayor solo se produce una reflexión, si bien el ángulo cambia dependiendo del medio de origen y el medio de destino, se puede saber que con la colisión de haz de luz con el ángulo límite se producirá un rayo paralelo a la superficie.</string>
+    <string name="physic_paragraph_25">Debido a lo común que fue este análisis en láminas se creó una ecuación que utilizaba el ancho del prisma(e), y los ángulos de incidencia y refracción para calcular el desvío final del haz de luz. De  manera similar, en los prismas se generó una ecuación, donde se relacionan diferentes ángulos. Se creó el concepto de ángulo de refringencia( ángulo de diferencia entre la superficie de entrada y la superficie de salida del prisma) y la desviación angular(la diferencia de ángulo entre el rayo incidente y el emergente.).</string>
+
+    <string name="physic_paragraph_26">En el estudio de los objetos transparentes, las lentes son las más usadas para correcciones de problemas de vista, u la mejora de la misma en telescopios y microscopios. Hay varios tipos de lentes, pero suelen dividirse en convergentes y divergentes, dependiendo de si la segunda cara es convexa o cóncava, entre las subdivisiones están las lentes bicóncavas, biconvexas, plano convexa, plano cóncava, cóncavo-convexa y convexa-cóncava.</string>
+    <string name="physic_paragraph_27">En los sistemas con lentes, habrá un centro, vértice y foco por cada superficie circular. Entre los conceptos más importantes están el aumento(relación entre el tamaño de la imagen y el tamaño del objeto que la genera), la relación de posiciones entre la imagen y el objeto, la potencia o grado de convergencia( facilidad de convergencia de los rayos de que pasan por el lente)</string>
+
+    <string name="physic_paragraph_28">Si se aplicase una fuerza sobre 2 cuerpos de diferente masa totalmente inmóviles, no hay duda de que el más liviano ganaría mayor velocidad, sin embargo la cantidad de movimiento lineal sería igual en ambos cuerpos. La CML es la medida de movimiento de una partícula a una velocidad determinada, ya sea que la partícula se mueva el doble de rápido o si se cuentan 2 partículas en lugar de una, la cantidad de movimiento será la misma, el doble de la original.</string>
+
+    <string name="physic_paragraph_29">El impulso es el mantenimiento de la aplicación de una fuerza, la diferencia de cantidad de movimiento lineal de un cuerpo.</string>
+
+    <string name="physic_paragraph_30">El trabajo es la representación del movimiento o la deformación generada por una fuerza, es distinta del esfuerzo puesto solo cuenta el gasto efectivo, o las fuerzas que sí han generado un resultado.</string>
+
+    <string name="physic_paragraph_31">Es la rapidez con la que una fuerza realiza un trabajo.</string>
+
+    <string name="physic_paragraph_32">Comparación entre una magnitud realizada y la total utilizada, entre los resultados y el esfuerzo para obtenerlos; esta magnitud puede ser fuerza, trabajo, energía, etc.</string>
+
+    <string name="physic_paragraph_33">La energía es la capacidad de generación de trabajo; la propiedad de la energía en un cuerpo describe los posibles trabajos que sufrirá si no surge ningún factor extra. Como una piedra que es lanzada, mientras está en el aire tendrá energía gravitatoria y cinética, puesto a menos que se choque con algo se seguirá moviendo y caerá al suelo. De cierta manera se puede ver el trabajo como un intercambio de energías.</string>
+
+    <string name="physic_paragraph_34">Dentro de un sistema cerrado toda fuerza empleada entre sus elementos pasara de un cuerpo a otro, por lo tanto se las denominara fuerzas conservativas ya que mantienen la cantidad total de movimiento en el sistema; estas fuerzas no son dependientes de las trayectorias de sus elementos.</string>
+    <string name="physic_paragraph_35">Por otro lado, las fuerzas disipativas se emplean entre un agente fuera del sistema y uno que está dentro; el traspaso de cantidad de movimiento lineal modificara la fuerza total del sistema, estas fuerzas dependen de la trayectoria que tomen los cuerpos.</string>
+
+    <string name="physic_paragraph_36">Es la energía total de un cuerpo, la suma de sus energías potenciales y la energía cinética. La variación en la energía mecánica será igual al trabajo total del sistema.</string>
+
+    <string name="physic_paragraph_37">Si el trabajo total de un sistema es cero, su energía mecánica se mantiene intacta. Así mismo, si el tiempo durante una colisión fuese minúsculo y por ello insignificante, la diferencia de movimiento lineal también lo sería, pudiendo mantenerse la cantidad de movimiento total del sistema. </string>
+
+    <string name="physic_paragraph_38">Las colisiones se clasifican según el método de aplicación de sus fuerzas y su capacidad para mantener la cantidad de movimiento del sistema. En el primer caso se dividen en choques centrales, es decir la superficie de choque y los centros de masa están alineados; y choques oblicuos, donde la superficie de choque no es perpendicular al centro de masa de uno de los objetos, sólo una parte de las fuerzas involucradas entrará en conflicto.</string>
     <!-- <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
-    <string name="physic_paragraph_"></string>
     <string name="physic_paragraph_"></string>
     <string name="physic_paragraph_"></string>
     <string name="physic_paragraph_"></string>

@@ -34,7 +34,7 @@ fun Appnavigation(){
             MainMathScreen(navController = navController)
         }
         composable(AppScreens.MainPhysicsScreen.route){
-            MainPhysicsScreen(navController = navController)
+            MainPhysicsScreen()
         }
         composable(AppScreens.PhysicResumeScreen.route){
             PhysicResumeScreen(navController = navController)
